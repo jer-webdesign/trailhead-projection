@@ -18,9 +18,9 @@ app.use(express.json())
 
 // Track current selection state
 let currentSelection = {
-  homesiteId: null as string | null,
+  homesiteId: null,
   timestamp: 0,
-  source: null as string | null,
+  source: null,
 }
 
 // REST endpoint for OBS Python controller to poll / push
@@ -44,7 +44,7 @@ io.on('connection', (socket) => {
   socket.on('selection', (event) => {
     // Validate event shape
     if (typeof event !== 'object' || event === null) return
-    const { homesiteId, timestamp, source } = event as Record<string, unknown>
+    const { homesiteId, timestamp, source } = event
 
     currentSelection = {
       homesiteId: typeof homesiteId === 'string' ? homesiteId : (homesiteId === null ? null : null),
