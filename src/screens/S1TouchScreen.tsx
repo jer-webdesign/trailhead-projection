@@ -163,7 +163,7 @@ export default function S1TouchScreen() {
         )}
       </div>
 
-      {/* Bottom nav — homesites quick list */}}
+      {/* Bottom nav — homesites quick list */}
       <nav
         style={{
           display: 'flex',

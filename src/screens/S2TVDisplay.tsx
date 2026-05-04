@@ -57,7 +57,7 @@ export default function S2TVDisplay() {
         overflow: 'hidden',
       }}
     >
-      {/* Top bar */}}
+      {/* Top bar */}
       <header
         style={{
           display: 'flex',
