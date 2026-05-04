@@ -34,7 +34,7 @@ export default function S3LEDWall() {
     <div
       style={{
         width: '100vw',
-        height: '100vh',
+        height: '100dvh',
         background: '#000',
         overflow: 'hidden',
         position: 'relative',

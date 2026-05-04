@@ -16,7 +16,7 @@ export default function S1TouchScreen() {
     <div
       style={{
         width: '100vw',
-        height: '100vh',
+        height: '100dvh',
         background: '#0d1f1a',
         display: 'flex',
         flexDirection: 'column',
@@ -60,9 +60,9 @@ export default function S1TouchScreen() {
       </header>
 
       {/* Main content */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', minHeight: 0 }}>
         {/* Map */}
-        <div style={{ flex: selected ? '0 0 55%' : '1', transition: 'flex 0.4s ease', position: 'relative' }}>
+        <div style={{ flex: selected ? '0 0 55%' : '1 1 0', minHeight: 0, transition: 'flex 0.4s ease', position: 'relative', overflow: 'hidden' }}>
           <LandscapeMap
             selectedId={selectedId}
             onSelect={handleSelect}

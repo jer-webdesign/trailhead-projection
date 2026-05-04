@@ -48,7 +48,7 @@ export default function S2TVDisplay() {
     <div
       style={{
         width: '100vw',
-        height: '100vh',
+        height: '100dvh',
         background: '#060f0c',
         display: 'flex',
         flexDirection: 'column',

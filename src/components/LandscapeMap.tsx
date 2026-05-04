@@ -17,11 +17,11 @@ export default function LandscapeMap({
   className = '',
 }: LandscapeMapProps) {
   return (
-    <div className={`map-container ${className}`} style={{ width: '100%', height: '100%' }}>
+    <div className={`map-container ${className}`} style={{ width: '100%', height: '100%', position: 'relative' }}>
       <svg
-        viewBox="0 0 640 480"
+        viewBox="0 0 640 490"
         preserveAspectRatio="xMidYMid meet"
-        style={{ width: '100%', height: '100%' }}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
