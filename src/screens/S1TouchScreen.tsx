@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import LandscapeMap from '../components/LandscapeMap'
+import FullscreenPrompt from '../components/FullscreenPrompt'
 import { homesites } from '../data/homesites'
 import { useSocket } from '../hooks/useSocket'
 
@@ -161,6 +162,7 @@ export default function S1TouchScreen() {
         )}
       </div>
 
+      <FullscreenPrompt color="#00d4aa" />
       {/* Bottom nav — homesites quick list */}
       <nav
         style={{

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import LandscapeMap from '../components/LandscapeMap'
+import FullscreenPrompt from '../components/FullscreenPrompt'
 import { homesites, Homesite } from '../data/homesites'
 import { useSocket } from '../hooks/useSocket'
 
@@ -55,6 +56,7 @@ export default function S2TVDisplay() {
         overflow: 'hidden',
       }}
     >
+      <FullscreenPrompt color="#a8ff3e" />
       {/* Top bar */}
       <header
         style={{

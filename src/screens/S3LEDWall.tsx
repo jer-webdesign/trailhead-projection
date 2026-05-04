@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import FullscreenPrompt from '../components/FullscreenPrompt'
 import { homesites } from '../data/homesites'
 import { useSocket } from '../hooks/useSocket'
 
@@ -40,6 +41,7 @@ export default function S3LEDWall() {
         position: 'relative',
       }}
     >
+      <FullscreenPrompt color="#ffb800" />
       {/* Idle state — branded holding screen */}
       <div
         style={{
