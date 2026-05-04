@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import LandscapeMap from '../components/LandscapeMap'
-import FullscreenPrompt from '../components/FullscreenPrompt'
 import { homesites } from '../data/homesites'
 import { useSocket } from '../hooks/useSocket'
+import { useFullscreen } from '../hooks/useFullscreen'
 
 export default function S1TouchScreen() {
   const { connected, selectedId, emitSelection } = useSocket('s1')
+  useFullscreen()
   const selected = homesites.find(h => h.id === selectedId) ?? null
 
   function handleSelect(id: string) {
@@ -162,8 +163,7 @@ export default function S1TouchScreen() {
         )}
       </div>
 
-      <FullscreenPrompt color="#00d4aa" />
-      {/* Bottom nav — homesites quick list */}
+      {/* Bottom nav — homesites quick list */}}
       <nav
         style={{
           display: 'flex',

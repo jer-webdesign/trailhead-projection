@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
-import FullscreenPrompt from '../components/FullscreenPrompt'
 import { homesites } from '../data/homesites'
 import { useSocket } from '../hooks/useSocket'
+import { useFullscreen } from '../hooks/useFullscreen'
 
 type Phase = 'idle' | 'transition-in' | 'playing' | 'transition-out'
 
 export default function S3LEDWall() {
   const { connected, selectedId } = useSocket('s3')
+  useFullscreen()
   const selected = homesites.find(h => h.id === selectedId) ?? null
   const videoRef = useRef<HTMLVideoElement>(null)
   const [phase, setPhase] = useState<Phase>('idle')
@@ -41,7 +42,6 @@ export default function S3LEDWall() {
         position: 'relative',
       }}
     >
-      <FullscreenPrompt color="#ffb800" />
       {/* Idle state — branded holding screen */}
       <div
         style={{

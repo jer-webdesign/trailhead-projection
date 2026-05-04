@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import LandscapeMap from '../components/LandscapeMap'
-import FullscreenPrompt from '../components/FullscreenPrompt'
 import { homesites, Homesite } from '../data/homesites'
 import { useSocket } from '../hooks/useSocket'
+import { useFullscreen } from '../hooks/useFullscreen'
 
 export default function S2TVDisplay() {
   const { connected, selectedId } = useSocket('s2')
+  useFullscreen()
   const selected = homesites.find(h => h.id === selectedId) ?? null
   const prevSelectedRef = useRef<string | null>(null)
   const [animating, setAnimating] = useState(false)
@@ -56,8 +57,7 @@ export default function S2TVDisplay() {
         overflow: 'hidden',
       }}
     >
-      <FullscreenPrompt color="#a8ff3e" />
-      {/* Top bar */}
+      {/* Top bar */}}
       <header
         style={{
           display: 'flex',

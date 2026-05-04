@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export function useFullscreen() {
   const [isFullscreen, setIsFullscreen] = useState(false)
@@ -8,13 +8,14 @@ export function useFullscreen() {
       setIsFullscreen(!!document.fullscreenElement)
     }
     document.addEventListener('fullscreenchange', onChange)
+
+    // Attempt auto-fullscreen immediately
+    document.documentElement.requestFullscreen?.().catch(() => {
+      // Browser blocked it (no gesture) — silently ignore
+    })
+
     return () => document.removeEventListener('fullscreenchange', onChange)
   }, [])
 
-  const enter = useCallback(() => {
-    const el = document.documentElement
-    if (el.requestFullscreen) el.requestFullscreen()
-  }, [])
-
-  return { isFullscreen, enter }
+  return { isFullscreen }
 }
